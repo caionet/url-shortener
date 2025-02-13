@@ -35,7 +35,7 @@ jobs:
         with:
           intelineScript:
             #!/bin/bash
-            az gruop create --name  ${{ vars.RESOURCE_GROUP_NAME }} --location ${{ vars.RESOURCE_GROUP_LOCATION }}
+            az group create --name  ${{ vars.RESOURCE_GROUP_NAME }} --location ${{ vars.RESOURCE_GROUP_LOCATION }}
             echo "Azure resource group created"
 
       - name: Deploy

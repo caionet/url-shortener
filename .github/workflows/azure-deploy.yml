@@ -13,6 +13,10 @@ on:
       - Infrastructure/**
   workflow_dispatch: # manual trigger
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
@@ -23,8 +27,8 @@ jobs:
       - name: Azure login
         uses: azure/login@v2.1.1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          client-id: ${{ secrets.CLIENT_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - uses: Azure/CLI@v2

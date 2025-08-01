@@ -34,7 +34,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy-dev:
-    runs-on: ubunt-latest
+    runs-on: ubuntu-latest
     needs: build
     environment: Development
 
@@ -47,7 +47,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{vars.API_RESOURCE_NAME}}
+          app-name: ${{ vars.API_RESOURCE_NAME }}
           slot-name: "Production"
-          publish-profile: ${{secrets.AZURE_API_PUBLISH_PROFILE}}
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
           package: .

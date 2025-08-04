@@ -51,3 +51,4 @@ jobs:
           publish-profile: ${{secrets.AZURE_API_PUBLISH_PROFILE}}
           package: .
           slot-name: ""
+          deployment-method: zip

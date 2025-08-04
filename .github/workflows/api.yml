@@ -50,3 +50,4 @@ jobs:
           app-name: ${{vars.API_RESOURCE_NAME}}
           publish-profile: ${{secrets.AZURE_API_PUBLISH_PROFILE}}
           package: .
+          slot-name: ""

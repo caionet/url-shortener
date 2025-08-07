@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E156CBF7-613F-413E-BA99-48CB63423654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api", "Api\UrlShortener.Api.csproj", "{AD9D18FF-EEAD-4179-AC29-3C5DDDF4333D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlShortener.Api", "Api\UrlShortener.Api\UrlShortener.Api.csproj", "{AD9D18FF-EEAD-4179-AC29-3C5DDDF4333D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

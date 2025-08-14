@@ -17,6 +17,31 @@ module apiService 'Modules/Compute/appservice.bicep' = {
     appServicePlanName: 'plan-api-${uniqueId}'
     location: location
     keyVaultName: keyVault.outputs.name
+    appSettings: [
+      {
+        name: 'DataBaseName'
+        value: 'urls'
+      }
+      {
+        name: 'ContainerName'
+        value: 'items'
+      }
+    ]
+  }
+  dependsOn: [
+    keyVault
+  ]
+}
+
+module cosmosDb 'Modules/Storage/cosmos-db.bicep' = {
+  name: 'cosmosDbDeployment'
+  params: {
+    name: 'cosmos-${uniqueId}'
+    location: location
+    kind: 'GlobalDocumentDB'
+    databaseName: 'apiDatabase'
+    locationName: location
+    keyVaultName: keyVault.outputs.name
   }
   dependsOn: [
     keyVault
